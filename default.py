@@ -35,6 +35,7 @@ def main():
     else:
         status = xbmcgui.ListItem('Status: [COLOR green]ON[/COLOR]')
     xbmcplugin.addDirectoryItem(handle=handle, listitem=status, url='')
+
     if off:
         turn_on = xbmcgui.ListItem('Turn on')
         xbmcplugin.addDirectoryItem(handle=handle,
@@ -48,10 +49,10 @@ def main():
                                     url=build_url({'mode': 'off'}),
                                     isFolder=True)
         activate = xbmcgui.ListItem('Activate')
-    xbmcplugin.addDirectoryItem(handle=handle,
-                                listitem=activate,
-                                url=build_url({'mode': 'activate'}),
-                                isFolder=True)
+        xbmcplugin.addDirectoryItem(handle=handle,
+                                    listitem=activate,
+                                    url=build_url({'mode': 'activate'}),
+                                    isFolder=True)
     xbmcplugin.endOfDirectory(handle)
 
 if mode is None:
